@@ -23,3 +23,10 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.linearOrange {
+  background: var(
+    --Orange-Linear,
+    linear-gradient(49deg, #ffa450 11.85%, #ff5c00 66.77%)
+  );
+}

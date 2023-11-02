@@ -5,6 +5,8 @@ import Login from './components/Login'
 
 import SharedLayout from './components/SharedLayout'
 import Dashboards from './components/Dashboards'
+import HabitCreated from './components/HabitCreated'
+import AllHabit from './components/AllHabit'
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path='/' element={<SharedLayout />}>
           <Route index element={<Dashboards />} />
         </Route>
+        <Route path='/habit-created' element={<HabitCreated />} />
+        <Route path='/all-habits' element={<AllHabit />} />
       </Routes>
     </BrowserRouter>
   )
