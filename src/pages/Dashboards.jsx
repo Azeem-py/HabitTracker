@@ -1,10 +1,10 @@
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 
-import TodayHabit from '../micro_components/TodayHabit'
-import YourGoals from '../micro_components/YourGoals'
+import TodayHabit from '../components/TodayHabit'
+import YourGoals from '../components/YourGoals'
 
-import NewHabitModal from '../micro_components/NewHabitModal'
+import NewHabitModal from '../components/NewHabitModal'
 
 const Dashboards = () => {
   const percentage = 66

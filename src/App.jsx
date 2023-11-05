@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import SignUp from './components/SignUp'
-import Login from './components/Login'
+import SignUp from './pages/SignUp'
+import Login from './pages/Login'
 
-import SharedLayout from './components/SharedLayout'
-import Dashboards from './components/Dashboards'
-import HabitCreated from './components/HabitCreated'
-import AllHabit from './components/AllHabit'
+import SharedLayout from './pages/SharedLayout'
+import Dashboards from './pages/Dashboards'
+import HabitCreated from './pages/HabitCreated'
+import AllHabit from './pages/AllHabit'
 
 function App() {
   return (

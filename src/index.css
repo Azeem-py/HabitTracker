@@ -30,3 +30,19 @@ html {
     linear-gradient(49deg, #ffa450 11.85%, #ff5c00 66.77%)
   );
 }
+
+.select-month {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5em;
+  padding-left: 2.5em;
+}
+
+.month-option {
+  padding: 2rem !important;
+}

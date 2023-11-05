@@ -78,6 +78,7 @@ const NewHabitModal = () => {
                   </div>
                 </section>
               </div>
+
               <button className='linearOrange h-12 w-full mt-5 rounded-md text-white font-bold'>
                 Create New
               </button>

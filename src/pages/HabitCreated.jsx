@@ -1,5 +1,3 @@
-import React from 'react'
-
 import DoneSVG from '../assets/Notes_Outline 1.svg'
 
 const HabitCreated = () => {

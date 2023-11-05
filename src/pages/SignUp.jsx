@@ -1,5 +1,5 @@
-import AuthInverse from '../micro_components/AuthInverse'
-import InputGroup from '../micro_components/Input'
+import AuthInverse from '../components/AuthInverse'
+import InputGroup from '../components/Input'
 
 const SignUp = () => {
   const data = [
