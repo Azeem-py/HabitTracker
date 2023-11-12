@@ -3,8 +3,10 @@
 import { useState } from 'react'
 import { FaTimes, FaPlus } from 'react-icons/fa'
 import DropDown from './DropDown'
+import { useNavigate } from 'react-router-dom'
 
 const NewHabitModal = () => {
+  const navigate = useNavigate()
   const [showModal, setShowModal] = useState(false)
 
   // these states are for the habit period
@@ -79,7 +81,10 @@ const NewHabitModal = () => {
                 </section>
               </div>
 
-              <button className='linearOrange h-12 w-full mt-5 rounded-md text-white font-bold'>
+              <button
+                className='linearOrange h-12 w-full mt-5 rounded-md text-white font-bold'
+                onClick={() => navigate('/habit-created')}
+              >
                 Create New
               </button>
             </main>

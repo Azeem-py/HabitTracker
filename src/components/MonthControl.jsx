@@ -32,7 +32,7 @@ const MonthControl = () => {
       {/* {monthName} */}
       <select
         value={months[activeMonth]}
-        className='select-month text-center outline-none '
+        className='select-month text-center outline-none bg-transparent'
         onChange={handleChange}
       >
         {months.map((month, index) => {
