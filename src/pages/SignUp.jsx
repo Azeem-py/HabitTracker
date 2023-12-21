@@ -4,7 +4,7 @@ import InputGroup from '../components/Input'
 const SignUp = () => {
   const data = [
     { label: 'email', type: 'email', name: 'email' },
-    { label: 'name', type: 'text', name: 'name' },
+    { label: 'First Name', type: 'text', name: 'name' },
     { label: 'password', type: 'password', name: 'password' },
     { label: 'confirm password', type: 'password', name: 'password2' },
   ]

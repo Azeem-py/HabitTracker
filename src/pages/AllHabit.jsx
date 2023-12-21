@@ -1,10 +1,9 @@
-import { useState, useRef, useContext, useEffect } from 'react'
+import { useState, useContext } from 'react'
 import TodayHabit from '../components/TodayHabit'
-import { getMaxDate } from '../functions/MaxDate'
 import DateBox from '../components/DateBox'
 import { BsArrowLeftShort } from 'react-icons/bs'
 import MonthControl from '../components/MonthControl'
-import { currentMonth, activeBox } from '../functions/globalData'
+import { currentMonth, activeBox } from '../data/globalData'
 import { useNavigate } from 'react-router-dom'
 
 const AllHabit = () => {

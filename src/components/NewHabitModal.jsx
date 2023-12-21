@@ -1,13 +1,13 @@
 // Modal.js
 
 import { useState } from 'react'
-import { FaTimes, FaPlus } from 'react-icons/fa'
+import { FaTimes } from 'react-icons/fa'
 import DropDown from './DropDown'
 import { useNavigate } from 'react-router-dom'
 
-const NewHabitModal = () => {
+const NewHabitModal = ({ showModal, setShowModal, edit }) => {
   const navigate = useNavigate()
-  const [showModal, setShowModal] = useState(false)
+  // const [showModal, setShowModal] = useState(false)
 
   // these states are for the habit period
   const [period, setPeriod] = useState(30)
@@ -19,23 +19,18 @@ const NewHabitModal = () => {
     { value: 7, name: '1 week (7 days)' },
   ]
 
-  return (
-    <div className='fixed bottom-16 right-2'>
-      <button
-        className='aspect-square w-[3.875rem]  rounded-full shadow-md flex items-center justify-center'
-        type='button'
-        onClick={() => setShowModal(true)}
-      >
-        <div className='flex justify-center items-center bg-modalBtn w-[90%] aspect-square rounded-full shadow-card text-white text-2xl'>
-          <FaPlus />
-        </div>
-      </button>
+  const createTitle = 'Create New Habit Goal'
+  const editTitle = 'Edit Habit Goal'
 
+  return (
+    <div>
       {showModal ? (
         <div className='fixed inset-0 flex items-center justify-center z-50'>
           <div className='bg-white w-[90vw] max-w-md p-6 rounded-lg shadow-lg'>
             <header className='flex justify-between items-center border-b p-2'>
-              <h3 className='text-xl font-semibold '>Create New Habit Goal</h3>
+              <h3 className='text-xl font-semibold '>
+                {!edit ? createTitle : editTitle}
+              </h3>
               <button
                 className='text-red-500 font-semibold hover:text-red-700'
                 onClick={() => setShowModal(false)}

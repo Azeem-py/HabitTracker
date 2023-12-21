@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ModPopOver from './ModPopOver'
+import axios from 'axios'
+import { baseURL } from '../data/url'
+
 const TodayHabit = () => {
   const navigate = useNavigate()
 
@@ -11,6 +14,24 @@ const TodayHabit = () => {
   ]
 
   const Habit = ({ name, index }) => {
+    // const [habitData, setHabitData] = useState([])
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    }
+
+    const fetchHabit = () => {
+      return axios
+        .get(`${baseURL}/today-habits`, config)
+        .then((resp) => console.log(resp.data))
+        .catch((err) => console.log(err))
+    }
+
+    useEffect(() => {
+      fetchHabit()
+    }, [])
     return (
       <div className='flex justify-between items-center bg-[#EDFFF4] p-4 mb-2'>
         <p className='text-[#37C871] text-lg font-bold'>{name}</p>

@@ -1,9 +1,12 @@
 import { useState, useRef } from 'react'
 import Overlay from 'react-bootstrap/Overlay'
 import { BsThreeDotsVertical } from 'react-icons/bs'
+import NewHabitModal from './NewHabitModal'
 
 function ModPopOver() {
   const [show, setShow] = useState(false)
+  const [showModal, setShowModal] = useState(false)
+
   const target = useRef(null)
 
   return (
@@ -23,11 +26,18 @@ function ModPopOver() {
               ...props.style,
             }}
           >
-            <p>Edit</p>
+            <span>
+              <p onClick={() => setShowModal(true)}>Edit</p>
+            </span>
             <p>Delete</p>
           </div>
         )}
       </Overlay>
+      <NewHabitModal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        edit={true}
+      />
     </>
   )
 }

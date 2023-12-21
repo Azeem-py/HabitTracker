@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState, useMemo, useRef } from 'react'
-import { currentMonth, activeBox } from '../functions/globalData'
+import { useContext, useEffect, useMemo, useRef } from 'react'
+import { currentMonth, activeBox } from '../data/globalData'
 import { getMaxDate } from '../functions/MaxDate'
 
 const DateBox = ({ date }) => {

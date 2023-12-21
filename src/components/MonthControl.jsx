@@ -1,5 +1,5 @@
-import { useContext, useState } from 'react'
-import { currentMonth } from '../functions/globalData'
+import { useContext } from 'react'
+import { currentMonth } from '../data/globalData'
 import { PiCaretLeftLight, PiCaretRightLight } from 'react-icons/pi'
 
 const MonthControl = () => {

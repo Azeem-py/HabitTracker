@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
+import axios from 'axios'
+import { baseURL } from '../data/url'
+import { useNavigate } from 'react-router-dom'
 
 const InputGroup = ({ inputData, login = false }) => {
   const [loadComponent, setLoadComponent] = useState(false)
-  const [inputValues, setInputValues] = useState()
+  const [inputValues, setInputValues] = useState({})
+  const navigate = useNavigate()
 
   const authText = login ? 'Login' : 'Sign Up'
 
@@ -24,6 +28,19 @@ const InputGroup = ({ inputData, login = false }) => {
     const { name, value } = e.target
     const initialValues = { ...inputValues }
     setInputValues({ ...initialValues, [name]: value })
+  }
+
+  const handleSubmit = () => {
+    axios
+      .post(`${baseURL}/auth/${login ? 'login' : 'signup'}`, inputValues)
+      .then((resp) => {
+        if (login) {
+          localStorage.setItem('token', resp.data['accessToken'])
+          localStorage.setItem('name', resp.data['name'])
+        }
+        resp.status === 200 && navigate(`${login ? '/' : '/login'}`)
+      })
+      .catch((err) => console.log(err))
   }
 
   return (
@@ -59,7 +76,10 @@ const InputGroup = ({ inputData, login = false }) => {
             </span>
           </aside>
         )}
-        <button className='btn w-full rounded text-center text-lg text-white font-semibold h-12'>
+        <button
+          className='btn w-full rounded text-center text-lg text-white font-semibold h-12'
+          onClick={handleSubmit}
+        >
           {authText}
         </button>
       </footer>
